@@ -1,6 +1,8 @@
+import os
 import pandas as pd
 
-market_prices_df = pd.read_excel('./market-prices-dairy-products(1).xlsx', sheet_name='market-prices-dairy-products')
+CUR_DIR = os.path.dirname(__file__)
+market_prices_df = pd.read_excel(CUR_DIR + '/market-prices-dairy-products(1).xlsx', sheet_name='market-prices-dairy-products')
 
 france_dairy_products = market_prices_df[market_prices_df['Category']=='Dairy Products'][market_prices_df['Country']=='FR']
 print("\n---------------------")
